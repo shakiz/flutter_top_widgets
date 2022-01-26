@@ -29,9 +29,13 @@ class _AdaptiveWidgetsState extends State<AdaptiveWidgets> {
         child: Column(
           children: [
             Slider.adaptive(value: 1, onChanged: (newValue){}),
+            const SizedBox(height: 4),
             SwitchListTile.adaptive(title: const Text("Magic"), onChanged: (newValue){}, value: true,),
+            const SizedBox(height: 4),
             Switch.adaptive(value: true, onChanged: (newValue){}),
+            const SizedBox(height: 4),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(Icons.adaptive.arrow_back),
                 Icon(Icons.adaptive.share),
@@ -39,6 +43,7 @@ class _AdaptiveWidgetsState extends State<AdaptiveWidgets> {
                 Icon(Icons.adaptive.flip_camera_sharp),
               ],
             ),
+            const SizedBox(height: 4),
             const CircularProgressIndicator.adaptive(),
           ]
         ),
