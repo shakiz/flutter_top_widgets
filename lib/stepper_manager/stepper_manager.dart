@@ -32,6 +32,20 @@ class _StepperManagerState extends State<StepperManager> {
             _currentStepIndex = currentStepIndex;
           }),
           currentStep: _currentStepIndex,
+          onStepContinue: (){
+            if (_currentStepIndex != 4){
+              setState(() {
+                _currentStepIndex += 1;
+              });
+            }
+          },
+          onStepCancel: (){
+            if (_currentStepIndex != 0){
+              setState(() {
+                _currentStepIndex -= 1;
+              });
+            }
+          },
           steps: const [
             Step(title: Text("Step 1"), content: Text("This is step 1")),
             Step(title: Text("Step 2"), content: Text("This is step 2")),
