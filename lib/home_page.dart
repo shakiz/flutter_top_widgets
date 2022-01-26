@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_top_widgets/adaptive_widgets/adaptive_widgets.dart';
 import 'package:flutter_top_widgets/stepper_manager/stepper_manager.dart';
 
 import 'appbar_search_delegate/custom_appbar_search_delegate.dart';
@@ -55,6 +56,28 @@ class _HomePageState extends State<HomePage> {
                 child: Center(
                   child: Text(
                     "Stepper",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+            TextButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.green),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                )),
+              ),
+              onPressed: () async {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const AdaptiveWidgets()));
+              },
+              //LOGIN //Drawer Main
+              child: const Padding(
+                padding: EdgeInsets.all(8),
+                child: Center(
+                  child: Text(
+                    "Adaptive Widgets",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                   ),
