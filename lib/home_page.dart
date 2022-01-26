@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_top_widgets/stepper_manager/stepper_manager.dart';
 
+import 'appbar_search_delegate/custom_appbar_search_delegate.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -23,6 +25,14 @@ class _HomePageState extends State<HomePage> {
             child: const Icon(Icons.menu),
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: (){
+              showSearch(context: context, delegate: CustomAppbarSearchDelegate());
+            },
+            icon: const Icon(Icons.search),
+          )
+        ],
       ),
       body: Container(
         margin: const EdgeInsets.all(8),
