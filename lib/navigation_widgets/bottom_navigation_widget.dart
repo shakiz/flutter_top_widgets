@@ -82,6 +82,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 
   Widget profileWidget(){
     return Container(
+      width: MediaQuery.of(context).size.width,
       color: Colors.blueGrey,
       child: Column(
         children: [
@@ -102,7 +103,8 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 
   Widget homeWidget(){
     return Container(
-      color: Colors.blueGrey,
+      width: MediaQuery.of(context).size.width,
+      color: Colors.deepOrange,
       child: Column(
         children: [
           InkWell(
@@ -122,7 +124,8 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 
   Widget settingsWidget(){
     return Container(
-      color: Colors.blueGrey,
+      width: MediaQuery.of(context).size.width,
+      color: Colors.blueAccent,
       child: Column(
         children: [
           InkWell(
