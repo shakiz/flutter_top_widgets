@@ -27,6 +27,7 @@ class _DateTimeWidgetState extends State<DateTimeWidget> {
         ),
       ),
       body: Container(
+        margin: const EdgeInsets.all(16),
         color: Colors.white,
         child: Column(
           children: [
@@ -40,6 +41,7 @@ class _DateTimeWidgetState extends State<DateTimeWidget> {
               onPressed: () async {
                 DateTime? _newDate  = await showDatePicker(context: context, initialDate: _dateTime, firstDate: DateTime(1900), lastDate: DateTime(2300));
                 if (_newDate != null){
+                  print("${_dateTime.day} : ${_dateTime.month} : ${_dateTime.year}");
                   setState(() {
                     _dateTime = _newDate;
                   });
@@ -58,10 +60,13 @@ class _DateTimeWidgetState extends State<DateTimeWidget> {
               ),
             ),
             Center(
-              child: Text(
-                "${_dateTime.day} : ${_dateTime.month} : ${_dateTime.year}",
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text(
+                  "${_dateTime.day} : ${_dateTime.month} : ${_dateTime.year}",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.black45, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
             const SizedBox(height: 16,),
@@ -76,6 +81,7 @@ class _DateTimeWidgetState extends State<DateTimeWidget> {
               onPressed: () async {
                 TimeOfDay? _newTime  = await showTimePicker(context: context, initialTime: _timeOfDay);
                 if (_newTime != null){
+                  print("${_timeOfDay.hour} : ${_timeOfDay.minute}");
                   setState(() {
                     _timeOfDay = _newTime;
                   });
@@ -94,10 +100,13 @@ class _DateTimeWidgetState extends State<DateTimeWidget> {
               ),
             ),
             Center(
-              child: Text(
-                "${_timeOfDay.hour} : ${_timeOfDay.minute}",
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text(
+                  "${_timeOfDay.hour} : ${_timeOfDay.minute}",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.black45, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
             const SizedBox(height: 16,),
