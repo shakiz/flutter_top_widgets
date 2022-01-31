@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_top_widgets/choice_chip_widget/choice_chip_widget.dart';
 import 'package:flutter_top_widgets/date_time_widget/date_time_widget.dart';
+import 'package:flutter_top_widgets/drawer_widget/drawer_widget.dart';
 import 'package:flutter_top_widgets/expansion_tile_and_wrap/expansion_tile_and_wrap.dart';
 import 'package:flutter_top_widgets/navigation_widgets/bottom_navigation_widget.dart';
 import 'package:flutter_top_widgets/page_view_widget/page_view_widget.dart';
@@ -32,7 +33,7 @@ class _HomePageState extends State<HomePage> {
         leading: Builder(
           builder: (context) => InkWell(
             onTap: () {
-              //Navigator.of(context).pop();
+              Scaffold.of(context).openDrawer();
             },
             child: const Icon(Icons.menu),
           ),
@@ -47,6 +48,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+      drawer: const DrawerWidget(),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.all(8),
