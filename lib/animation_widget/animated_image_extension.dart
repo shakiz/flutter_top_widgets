@@ -10,7 +10,7 @@ class AnimatedImageExtension extends StatefulWidget {
 class _AnimatedImageExtensionState extends State<AnimatedImageExtension>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller =
-      AnimationController(vsync: this, duration: const Duration(seconds: 2))..repeat();
+      AnimationController(vsync: this, duration: const Duration(seconds: 2))..repeat(reverse: true);
   late final Animation<Offset> _animation =
       Tween(begin: Offset.zero, end: const Offset(0, 0.08)).animate(_controller);
 
@@ -29,7 +29,7 @@ class _AnimatedImageExtensionState extends State<AnimatedImageExtension>
   Widget build(BuildContext context) {
     return SlideTransition(
       position: _animation,
-      child: Image.asset("assets/rocket.png"),
+      child: Image.asset("assets/images/rocket.png"),
     );
   }
 }

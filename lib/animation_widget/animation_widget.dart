@@ -15,6 +15,7 @@ class _AnimationWidgetState extends State<AnimationWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orange,
         title: const Text("Animation Widget"),
         leading: Builder(
           builder: (context) => InkWell(
@@ -26,7 +27,14 @@ class _AnimationWidgetState extends State<AnimationWidget> {
         ),
       ),
       body: Container(
-        color: Colors.white,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(145, 131, 222, 1),
+              Color.fromARGB(160, 105, 154, 13),
+            ]
+          )
+        ),
         width: MediaQueryExtension.getWidth(context),
         child: Column(
           children: const [
