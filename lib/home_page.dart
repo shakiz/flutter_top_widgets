@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_top_widgets/animation_widget/animation_widget.dart';
 import 'package:flutter_top_widgets/choice_chip_widget/choice_chip_widget.dart';
 import 'package:flutter_top_widgets/date_time_widget/date_time_widget.dart';
 import 'package:flutter_top_widgets/drawer_widget/drawer_widget.dart';
@@ -506,6 +507,33 @@ class _HomePageState extends State<HomePage> {
                   child: Center(
                     child: Text(
                       "MediaQuery Widget",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8),
+              TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.green),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  )),
+                ),
+                onPressed: () async {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AnimationWidget()));
+                },
+                //LOGIN //Drawer Main
+                child: const Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Center(
+                    child: Text(
+                      "Animation Widget",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
