@@ -1,6 +1,10 @@
-# flutter_top_widgets
+# Top Widgets in Flutter
 
-A new Flutter project.
+This is a common repo where you can get most frequest used widgets in flutter.
+
+# Samples
+
+![Alt Text](https://raw.githubusercontent.com/shakiz/flutter_top_widgets/master/assets/screenshots/image_1.jpg)
 
 ## Getting Started
 
