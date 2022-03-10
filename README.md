@@ -4,8 +4,7 @@ This is a common repo where you can get most frequest used widgets in flutter.
 
 # Samples
 
-![](https://raw.githubusercontent.com/shakiz/flutter_top_widgets/master/assets/screenshots/image_1.jpg =250x250)
-
+<img src="https://raw.githubusercontent.com/shakiz/flutter_top_widgets/master/assets/screenshots/image_1.jpg" width="240" height="320">
 ## Getting Started
 
 This project is a starting point for a Flutter application.
