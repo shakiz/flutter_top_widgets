@@ -67,31 +67,30 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     });
   }
 
-  Widget getCurrentWidget(index){
-    if (index == 0){
+  Widget getCurrentWidget(index) {
+    if (index == 0) {
       return profileWidget();
-    }
-    else if (index == 1){
+    } else if (index == 1) {
       return homeWidget();
-    }
-    else if (index == 2){
+    } else if (index == 2) {
       return settingsWidget();
     }
     return Container();
   }
 
-  Widget profileWidget(){
+  Widget profileWidget() {
     return Container(
       width: MediaQuery.of(context).size.width,
       color: Colors.blueGrey,
       child: Column(
         children: [
           InkWell(
-            onTap: (){
-              showModalBottomSheet(context: context, builder: (context){
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
                     return const BottomSheetView("Profile Details CLicked");
-                  }
-              );
+                  });
             },
             child: const Text('Show Details',
                 style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
@@ -101,18 +100,19 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     );
   }
 
-  Widget homeWidget(){
+  Widget homeWidget() {
     return Container(
       width: MediaQuery.of(context).size.width,
       color: Colors.deepOrange,
       child: Column(
         children: [
           InkWell(
-            onTap: (){
-              showModalBottomSheet(context: context, builder: (context){
-                return const BottomSheetView("Home Details CLicked");
-              }
-              );
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return const BottomSheetView("Home Details CLicked");
+                  });
             },
             child: const Text('Show Details',
                 style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
@@ -122,18 +122,19 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     );
   }
 
-  Widget settingsWidget(){
+  Widget settingsWidget() {
     return Container(
       width: MediaQuery.of(context).size.width,
       color: Colors.blueAccent,
       child: Column(
         children: [
           InkWell(
-            onTap: (){
-              showModalBottomSheet(context: context, builder: (context){
-                return const BottomSheetView("Settings Details CLicked");
-              }
-              );
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return const BottomSheetView("Settings Details CLicked");
+                  });
             },
             child: const Text('Show Details',
                 style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),

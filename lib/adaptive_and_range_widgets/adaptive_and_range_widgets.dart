@@ -15,7 +15,7 @@ class _AdaptiveAndRangeWidgetsState extends State<AdaptiveAndRangeWidgets> {
   @override
   Widget build(BuildContext context) {
     RangeLabels _rangeLabels = RangeLabels(
-        _rangeValues.start.toString(), _rangeValues.end.toString());
+        ((_rangeValues.start)).toString(), ((_rangeValues.end)).toString());
 
     return Scaffold(
       appBar: AppBar(
@@ -34,14 +34,27 @@ class _AdaptiveAndRangeWidgetsState extends State<AdaptiveAndRangeWidgets> {
         color: Colors.white,
         child: Column(
             children: [
-              RangeSlider(values: _rangeValues,
-                labels: _rangeLabels,
-                onChanged: (newValues) {
-                  setState(() {
-                    _rangeValues = newValues;
-                  });
-                },
-                divisions: 8,),
+              SliderTheme(
+                data: SliderTheme.of(context).copyWith(
+                  activeTrackColor: Colors.orangeAccent.withOpacity(0.6),
+                  inactiveTrackColor: Colors.black12,
+                  thumbColor: Colors.white,
+                  thumbShape:
+                  const RoundSliderThumbShape(enabledThumbRadius: 6),
+                ),
+                child: RangeSlider(
+                  values: _rangeValues,
+                  labels: _rangeLabels,
+                  min: 1,
+                  max: 9,
+                  divisions: 9,
+                  onChanged: (newValues) {
+                    setState(() {
+                      _rangeValues = newValues;
+                    });
+                  },
+                ),
+              ),
               const SizedBox(height: 4),
               Slider.adaptive(value: 1, onChanged: (newValue) {}),
               const SizedBox(height: 4),
